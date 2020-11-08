@@ -160,7 +160,7 @@ public class FileStuff {
 	public static void writeAccountsList(List<Accounts> accList) {
 		try {
 			ObjectOutputStream accListOut = new ObjectOutputStream(new FileOutputStream(accountsList));
-			accListOut.writeObject(accountsList);
+			accListOut.writeObject(accList);
 			accListOut.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -172,7 +172,7 @@ public class FileStuff {
 	}
 	
 	//read
-	@SuppressWarnings({ "unused", "unchecked" })
+	@SuppressWarnings("unchecked" )
 	public static void readAccountsList() {
 		try {
 			ObjectInputStream accListIn = new ObjectInputStream(new FileInputStream(accountsList));
