@@ -55,16 +55,21 @@ public class AllFiles {
 	}
 	
 	public static void findAcctsByUser(String user) {
-		for(int i = 0; i < AllFiles.accList.size(); i++) {
-			Accounts acct = AllFiles.accList.get(i);
-			if(acct.getUsername().equals(user)) {
-				System.out.println("\n["+(i+1)+"]" + acct);
-			}else if(acct.getJointUser().equals(user)) {
-				System.out.println("\n["+(i+1)+"]" + acct);
-			}else {
-				System.out.println("This user has no accounts.");
+		try {
+			for(int i = 0; i < AllFiles.accList.size(); i++) {
+				Accounts acct = AllFiles.accList.get(i);
+				if(acct.getUsername().equals(user)) {
+					System.out.println("\n["+(i+1)+"]" + acct);
+				}else if(acct.getJointUser().equals(user)) {
+					System.out.println("\n["+(i+1)+"]" + acct);
+				}else {
+					System.out.println("This user has no accounts.");
+				}
 			}
+		}catch(NullPointerException nex) {
+			System.out.println("still issues with getJointUser");
 		}
+		
 	}
 
 }
