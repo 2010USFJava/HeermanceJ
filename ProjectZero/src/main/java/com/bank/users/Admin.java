@@ -17,6 +17,7 @@ public class Admin implements Serializable{
 		super();
 		AllFiles.amap.put(username,password);
 		FileStuff.writeAdminFile(AllFiles.amap);
+		System.out.println("A new admin login has been created.");
 		LogThis.LogIt("info", "A new admin login has been created.");
 	}
 	
@@ -24,8 +25,9 @@ public class Admin implements Serializable{
 		super();
 		this.username = username;
 		this.password = password;
-		AllFiles.emap.put(username,password);
+		AllFiles.amap.put(username,password);
 		FileStuff.writeAdminFile(AllFiles.amap);
+		System.out.println("A new admin login has been created.");
 		LogThis.LogIt("info", "A new admin login has been created.");
 	}
 	
