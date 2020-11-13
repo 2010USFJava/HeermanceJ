@@ -1,4 +1,6 @@
-create schema if not exists pokemonland authorization "JHeermance";
+create schema if not exists pokemonland authorization annacarl;
+set search_path to pokemonland; 
+
 
 create table trainer( --trainer objects
 tid serial primary key,
