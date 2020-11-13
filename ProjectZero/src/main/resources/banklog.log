@@ -1,8 +1,0 @@
-[INFO ] 2020-11-09 14:25:36.901 [main] LogThis - A new customer account has been recorded.
-[INFO ] 2020-11-09 14:25:36.904 [main] LogThis - A new account has been created
-[INFO ] 2020-11-09 14:26:21.051 [main] LogThis - An account was applied for.
-[INFO ] 2020-11-09 14:26:24.768 [main] LogThis - An account was applied for.
-[INFO ] 2020-11-09 14:27:27.488 [main] LogThis - A CHECKING account for JHeermance has been approved by admin1.
-[INFO ] 2020-11-09 14:27:31.008 [main] LogThis - A SAVINGS account for JHeermance has been approved by admin1.
-[INFO ] 2020-11-09 14:28:29.565 [main] LogThis - Jennifer Heermance has deposited 1000.00 into account 66812.
-[INFO ] 2020-11-09 14:28:47.197 [main] LogThis - 550.0 was transferred to account 61949 from 66812.
