@@ -42,6 +42,7 @@ public class AccountsDaoImpl implements AccountsDAO{
 					acctid = rs.getLong(1);
 			}
 		}
+		LogThis.LogIt("info", "Account "+acctid+ " was applied for.");
 		return acctid;
 	}
 	
@@ -302,8 +303,9 @@ public class AccountsDaoImpl implements AccountsDAO{
 		}
 		if(num!=0) {
 			System.out.println("This account has a balance. Please empty this account before proceeding.");
+			
 		}
-		String sql2 = "delete from \"Accounts\" where \"Account_ID\"=? cascade";
+		String sql2 = "delete from \"Accounts\" where \"Account_ID\"=?";
 		PreparedStatement ps2 = conn.prepareStatement(sql2);
 		ps2.setLong(1,acctid);
 		ps2.executeUpdate();		

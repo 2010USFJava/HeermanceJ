@@ -24,21 +24,8 @@ create table "Accounts"(
 );
 
 create table "Account_Users"( --allows for multiple joint users
-"Account_ID" int not null unique,
-"Customer_ID" int not null unique,
+"Account_ID" int not null,
+"Customer_ID" int not null,
 foreign key ("Account_ID") references "Accounts"("Account_ID") on delete cascade,
 foreign key ("Customer_ID") references "Customer"("Customer_ID") on delete cascade
 );
-
---
-	
-
-delete from "Customer" where "Username" = 'TestUsertest';
-commit;
-
-drop table "Account_Users";
-drop table "Accounts";
-
-select * from "Account_Users" right join "Accounts" on "Account_Users"."Account_ID"="Accounts"."Account_ID";
-select * from "Account_Users" right join "Customer" on "Account_Users"."Customer_ID" = "Customer"."Customer_ID";
-

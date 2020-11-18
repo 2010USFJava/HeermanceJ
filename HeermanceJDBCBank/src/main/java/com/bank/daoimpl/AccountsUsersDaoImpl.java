@@ -22,10 +22,10 @@ public class AccountsUsersDaoImpl implements AccountsUsersDAO{
 	@Override
 	public void insertRelationship(long custid, long acctid) throws SQLException {
 		Connection conn = cf.getConnection();
-		String sql = "insert into \"Accounts_Users\' values(?,?)";
+		String sql = "insert into \"Account_Users\" values(?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setLong(1, acctid);
-		ps.setLong(1, custid);
+		ps.setLong(2, custid);
 		ps.executeUpdate();
 		LogThis.LogIt("info", custid + " is a user for account "+ acctid);
 	}
@@ -43,7 +43,11 @@ public class AccountsUsersDaoImpl implements AccountsUsersDAO{
 			a = new Accounts(rs.getLong(3),accountType.valueOf(rs.getString(4)),rs.getBoolean(5),rs.getDouble(6));
 			acctlist.add(a);
 		}
-		System.out.println(acctlist.toString());
+		if(acctlist.size()==0) {
+			System.out.println("This user has no accounts.");
+		}else {
+			System.out.println(acctlist.toString());
+		}
 		return acctlist;
 	}
 	

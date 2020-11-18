@@ -20,9 +20,7 @@ import com.bank.daoimpl.AccountsUsersDaoImpl;
 import com.bank.daoimpl.CustomerDaoImpl;
 import com.bank.exceptions.NotMoneyException;
 import com.bank.exceptions.WrongLoginException;
-import com.bank.util.AllFiles;
 import com.bank.util.ConnFactory;
-import com.bank.util.FileStuff;
 import com.bank.util.LogThis;
 
 public class Menu {
@@ -213,31 +211,40 @@ public class Menu {
 		do {
 			try {
 				System.out.println("Please select from the following account options:");
-				System.out.println("\t[1] Reset your password");
-				System.out.println("\t[2] Update your address");
-				System.out.println("\t[3] Apply for an account");
-				System.out.println("\t[4] Check your account balance");
-				System.out.println("\t[5] Deposit");
-				System.out.println("\t[6] Withdraw");
-				System.out.println("\t[7] Initiate a Transfer");
+				System.out.println("\t[1] View Your Profile");
+				System.out.println("\t[2] Reset Your Password");
+				System.out.println("\t[3] Update Your Address");
+				System.out.println("\t[4] Apply for an Account");
+				System.out.println("\t[5] Check your Account Balance");
+				System.out.println("\t[6] Deposit");
+				System.out.println("\t[7] Withdraw");
+				System.out.println("\t[8] Initiate a Transfer");
+				System.out.println("\t[9] Delete an Account");
 				System.out.println("\t[0] Logout");
 				int option = scan.nextInt();
 				
 				switch(option) {
-				case 1://reset password
+				case 1://view profile
+					System.out.println(cust.toString());
+					customerMenu(cust);
+					break;
+				case 2://reset password
 					resetPassword(cust);
+					customerMenu(cust);
 					break;
-				case 2://Update address
+				case 3://Update address
 					updateAddress(cust);
+					customerMenu(cust);
 					break;
-				case 3://Apply for account
+				case 4://Apply for account
 					applyForAccount(cust);
+					customerMenu(cust);
 					break;
-				case 4://check balance
+				case 5://check balance
 					System.out.println("Your current balance is " + df.format(acct.getBalance()));
 					customerMenu(cust);
 					break;
-				case 5://deposit
+				case 6://deposit
 					do {
 						try {
 							System.out.println("Please enter the amount that you would like to deposit.");
@@ -260,7 +267,7 @@ public class Menu {
 					}while(continueInput);
 					customerMenu(cust);
 					break;
-				case 6://withdraw
+				case 7://withdraw
 					do {
 						try {
 							System.out.println("Please enter the amount that you would like to withdraw.");
@@ -283,7 +290,7 @@ public class Menu {
 					}while(continueInput);
 					customerMenu(cust);
 					break;	
-				case 7://transfer
+				case 8://transfer
 					do {
 						try {
 							System.out.println("Please select the account to transfer FROM.");
@@ -326,6 +333,19 @@ public class Menu {
 					}while(continueInput);
 					customerMenu(cust);
 					break;
+				case 9: //Delete account
+					audi.getAccountsByCustID(cust.getCustid());
+					Long acctid = scan.nextLong();
+					Accounts acctdel = null;
+					acctdel = adi.getAccountByID(acctid);
+					if(acctdel==null) {
+						System.out.println("This is not a valid account ID.");
+						customerMenu(cust);
+					}
+					adi.deleteAccount(acctid);
+					cdi.updateCustomerAccounts(cust, -1);
+					customerMenu(cust);
+					break;
 				case 0://Logout
 					LogThis.LogIt("info","Account "+cust.getCustid()+" logged out.");
 					System.out.println("=======================================================");
@@ -340,11 +360,13 @@ public class Menu {
 			}catch(InputMismatchException ex1) {
 				System.out.println("Invalid input. A number is required.");
 				scan.nextLine();
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}while(continueInput);
 	}
 	
-	
+	//case 2-1
 	public static void adminMenu(String username) {
 		do {
 			try {
@@ -361,19 +383,24 @@ public class Menu {
 					System.out.println("Please enter the customer's username.");
 					String custUser = scan.next();
 					Customer cust = cdi.getCustomerByUsername(custUser);
+					if(cust==null) {
+						System.out.println("This is not a valid username.");
+						adminMenu(username);
+					}
 					System.out.println("Please select from the following options:");
-					System.out.println("\t [1] Create New Customer Account");
+					System.out.println("\t [1] Create New Customer Profile");
 					System.out.println("\t [2] View Account Information");
-					System.out.println("\t [3] View Customer Information");
+					System.out.println("\t [3] View Customer Profile Information");
 					System.out.println("\t [4] Complete Customer Transaction");
-					System.out.println("\t [5] Cancel Customer Account");
+					System.out.println("\t [5] Delete Customer Profile");
 					System.out.println("\t [0] Exit");
 					int opt = scan.nextInt();
 					switch(opt) {
 					case 1://create new cust acct
+						
 						break;
 					case 2://view acct info
-						AllFiles.findAcctsByUser(custUser);
+						cust.toString();
 						System.out.println("Press any key to return.");
 						scan.next();
 						adminMenu(username);
@@ -384,19 +411,24 @@ public class Menu {
 						scan.next();
 						adminMenu(username);
 						break;
-					case 4://cust transaction
+					case 4://cust transaction menu
 						System.out.println("Please select which account to use. Press 0 to exit.");
-						AllFiles.findAcctsByUser(custUser);
+						audi.getAccountsByCustID(cust.getCustid());
 						int choose = scan.nextInt();
 						if(choose==0) {
 							adminMenu(username);
 						}else {
-							Accounts acct = AllFiles.accList.get(choose-1);
+							Accounts acct = adi.getAccountByID(choose);
+							if(acct==null) {
+								System.out.println("This is not a valid account ID.");
+								adminMenu(username);
+							}
 							System.out.println("What would you like to do?");
 							System.out.println("\t [1] Check Account Balance");
 							System.out.println("\t [2] Deposit");
 							System.out.println("\t [3] Withdraw");
 							System.out.println("\t [4] Initiate a Transfer");
+							System.out.println("\t [5] Delete Account");
 							System.out.println("\t [0] Logout");
 							int again = scan.nextInt();
 							switch(again) {
@@ -405,15 +437,104 @@ public class Menu {
 								adminMenu(username);
 								break;
 							case 2://deposit
-								Accounts.deposit(cust, acct);
+								do {
+									try {
+										System.out.println("Please enter the amount that you would like to deposit.");
+										double amount = scan.nextDouble();
+										System.out.println("You want to deposit "+df.format(amount)+" ? (y/n)");
+										String dep = scan.next();
+										if(dep.equalsIgnoreCase("y")){
+											adi.deposit(acct.getAcctid(), amount, cust.getUsername());
+											continueInput=false;
+										}
+										adminMenu(username);
+									}catch(InputMismatchException ex1) {
+										throw new NotMoneyException();
+									}catch(NotMoneyException ex2) {
+										ex2.getMessage();
+										scan.next();
+									} catch (SQLException e) {
+										e.printStackTrace();
+									}
+								}while(continueInput);
 								adminMenu(username);
 								break;
 							case 3://withdraw
-								Accounts.withdraw(cust, acct);
+								do {
+									try {
+										System.out.println("Please enter the amount that you would like to withdraw.");
+										double amount = scan.nextDouble();
+										System.out.println("You want to withdraw "+df.format(amount)+" ? (y/n)");
+										String wd = scan.next();
+										if(wd.equalsIgnoreCase("y")){
+											adi.withdraw(acct.getAcctid(), amount, cust.getUsername());
+											continueInput=false;
+										}
+										adminMenu(username);
+									}catch(InputMismatchException ex1) {
+										throw new NotMoneyException();
+									}catch(NotMoneyException ex2) {
+										ex2.getMessage();
+										scan.next();
+									} catch (SQLException e) {
+										e.printStackTrace();
+									}
+								}while(continueInput);
+								adminMenu(username);
+								break;	
+							case 4://transfer
+								do {
+									try {
+										System.out.println("Please select the account to transfer FROM.");
+										audi.getAccountsByCustID(cust.getCustid());
+										Long acctid1 = scan.nextLong();
+										Accounts acct1 = null;
+										acct1 = adi.getAccountByID(acctid1);
+										if(acct1==null) {
+											System.out.println("This is not a valid account ID.");
+											adminMenu(username);
+										}
+										
+										System.out.println("Please select the account to transfer TO.");
+										audi.getAccountsByCustID(cust.getCustid());
+										Long acctid2 = scan.nextLong();
+										Accounts acct2 = null;
+										acct2 = adi.getAccountByID(acctid2);
+										if(acct2==null) {
+											System.out.println("This is not a valid account ID.");
+											adminMenu(username);
+										}
+										
+										System.out.println("Please input the amount you want to transfer.");
+										double amount = scan.nextDouble();
+										System.out.println("You want to transfer $"+df.format(amount)+"? (y/n)");
+										String tf = scan.next();
+										if(tf.equalsIgnoreCase("y")) {
+											adi.transfer(acctid1, acctid2, amount, cust.getUsername());
+											continueInput=false;
+										}
+										
+									}catch(InputMismatchException ex1) {
+										throw new NotMoneyException();
+									}catch(NotMoneyException ex2) {
+										ex2.getMessage();
+										customerMenu(cust);
+									} catch (SQLException e) {
+										e.printStackTrace();
+									}
+								}while(continueInput);
 								adminMenu(username);
 								break;
-							case 4://transfer
-								Accounts.transfer(cust);
+							case 5://delete customer account
+								audi.getAccountsByCustID(cust.getCustid());
+								Long acctid = scan.nextLong();
+								Accounts acctdel = null;
+								acctdel = adi.getAccountByID(acctid);
+								if(acctdel==null) {
+									System.out.println("This is not a valid account ID.");
+									adminMenu(username);
+								}
+								cdi.deleteCustomer(cust);
 								adminMenu(username);
 								break;
 							case 0://exit
@@ -424,23 +545,9 @@ public class Menu {
 							}
 						}
 						break;
-					case 5://cancel cust acct
-						System.out.println("Please select which account to cancel. Press 0 to exit.");
-						AllFiles.findAcctsByUser(custUser);
-						int del = scan.nextInt();
-						if(del==0) {
-							adminMenu(username);
-						}else {
-							Accounts acct = AllFiles.accList.get(del-1);
-							System.out.println("Are you sure you want to cancel account " + acct.getAccountNumber() + "? (y/n)");
-							String delete = scan.next();
-							if(delete.equalsIgnoreCase("y")) {
-								AllFiles.accList.remove(del-1);
-								FileStuff.writeAccountsList(AllFiles.accList);
-								System.out.println("Account " + acct.getAccountNumber() + " has been deleted.");
-								LogThis.LogIt("info", "Admin " + username + " has deleted customer account " + acct.getAccountNumber() + ".");
-							}else adminMenu(username);
-						}
+					case 5://delete cust profile
+						audi.getAccountsByCustID(cust.getCustid());
+						cdi.deleteCustomer(cust);
 						break;
 					case 0://exit
 						adminMenu(username);
@@ -461,6 +568,8 @@ public class Menu {
 			}catch(InputMismatchException ex) {
 				System.out.println("Invalid input. A number is required.");
 				scan.nextLine();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
 			}
 		}while(continueInput);
 	}
@@ -488,6 +597,8 @@ public class Menu {
 	}
 	
 	public static void updateAddress(Customer cust) {
+		System.out.println("You're entering your new address");
+		String unnecessary = scan.nextLine();
 		System.out.println("Please enter your street address, including any apartment numbers.");
 		String address_street = scan.nextLine();
 		System.out.println("Please enter your city.");
@@ -527,10 +638,9 @@ public class Menu {
 					System.out.println("I'm sorry. That was not a valid response.");
 					customerMenu(cust);
 				} 
-				LogThis.LogIt("info", "Account "+a.getAcctid()+ " was applied for by user" +cust.getCustid()+ ".");
 				audi.insertRelationship(cust.getCustid(), acctid);
 				System.out.println("Would you like to add another user onto this account? (y/n)");
-				String joint = scan.nextLine();
+				String joint = scan.next();
 				if(joint.equalsIgnoreCase("y")) {
 					System.out.println("Please enter their customer ID.");
 					do {
@@ -564,7 +674,6 @@ public class Menu {
 		}while(continueInput);
 	}
 	
-	//fix the things, cust acct num +1, make updateCustomerAccounts
 	public static void approveOrDeny(String username) {
 		do {
 			try {
@@ -583,22 +692,18 @@ public class Menu {
 					
 					System.out.println("Would you like to approve account " + acct.getAcctid() + "? (y/n)");
 					String approve = scan.next();
+					
 					if(approve.equalsIgnoreCase("y")) {
 						adi.updateAccountStatus(review);
+						Customer cust = null;
 						for(int i = 0; i<custList.size();i++) {
-							Customer cust = custList(i);
+							cust = custList.get(i);
 							cdi.updateCustomerAccounts(cust, 1);
-							int num = cust.getAccount_num();
-							String sql = "update \"Customers\" set \"Accounts\"=? where \"Customer_ID\"=?";
-							PreparedStatement ps = conn.prepareStatement(sql);
-							ps.setInt(1, num);
-							ps.setLong(2, cust.getCustid());
-							ps.executeUpdate();
 						}
 						System.out.println("You have approved account "+acct.getAcctid()+".");
-						LogThis.LogIt("info", "Account"+review+" has been approved by " + username + ".");
+						LogThis.LogIt("info", "Account "+review+" has been approved by " + username + ".");
 						approveOrDeny(username);
-					}else {
+					}else if(approve.equalsIgnoreCase("n")){
 						System.out.println("You have denied this account.");
 						adi.deleteAccount(review);
 						LogThis.LogIt("info", "Account "+review+" has been denied by " + username + ".");

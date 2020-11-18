@@ -61,6 +61,12 @@ public class CustomerDaoImplTest {
 		
 	}
 //	
+	
+	@Test
+	public void testUsernameExists() {
+		
+	}
+	
 //	@Test
 //	public void testGetCustomerByUsername(){
 //		Customer c = new Customer(0,"firsttest","mtest","lasttest","123 Test st","City","ST","12345","TestUsertest","TestPasswordtest",0);

@@ -67,7 +67,7 @@ public class Accounts implements Serializable{
 
 	@Override
 	public String toString() {
-		return "---------------------------------------------------------------------------------------------------\n"
+		return "\n---------------------------------------------------------------------------------------------------\n"
 				+ "Account ID: "+acctid+", Account Type = " + type + ", Account Active? = " + accountStatus + ", Balance=" + balance +
 				"\n--------------------------------------------------------------------------------------------------";
 	}

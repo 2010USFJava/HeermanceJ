@@ -160,8 +160,9 @@ public class CustomerDaoImpl implements CustomerDAO{
 		}
 		if(num!=0) {
 			System.out.println("This customer has open accounts. Please close those accounts before proceeding.");
+			
 		}
-		String sql2 = "delete from \"Customer\" where \"Customer_ID\"=? cascade";
+		String sql2 = "delete from \"Customer\" where \"Customer_ID\"=?";
 		PreparedStatement ps2 = conn.prepareStatement(sql2);
 		ps2.setLong(1,cust.getCustid());
 		ps2.executeUpdate();		

@@ -24,8 +24,8 @@ create table "Accounts"(
 );
 
 create table "Account_Users"( --allows for multiple joint users
-"Account_ID" int not null unique,
-"Customer_ID" int not null unique,
+"Account_ID" int not null,
+"Customer_ID" int not null,
 foreign key ("Account_ID") references "Accounts"("Account_ID") on delete cascade,
 foreign key ("Customer_ID") references "Customer"("Customer_ID") on delete cascade
 );

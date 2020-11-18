@@ -53,11 +53,21 @@ public class AccountsDaoImplTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void testGetInactiveAccounts() {
+		
+	}
 
 //	@Test
 //	public void testUpdateAccountStatus() {
 //		fail("Not yet implemented");
 //	}
+	
+	@Test
+	public void testGetAcctById() {
+		
+	}
 //
 //	@Test
 //	public void testDeposit() {
@@ -71,11 +81,6 @@ public class AccountsDaoImplTest {
 //
 //	@Test
 //	public void testTransfer() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testUpdateAccountBalance() {
 //		fail("Not yet implemented");
 //	}
 //
