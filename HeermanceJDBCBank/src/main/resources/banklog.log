@@ -71,3 +71,136 @@ Account ID: 11, Account Type = CHECKING, Account Active? = true, Balance=50.75
 [INFO ] 2020-11-17 21:22:51.315 [main] LogThis - Admin has logged in.
 [INFO ] 2020-11-17 21:23:29.016 [main] LogThis - Admin has logged in.
 [INFO ] 2020-11-17 21:23:37.163 [main] LogThis - Customer 2's account has been deleted.
+[INFO ] 2020-11-17 22:09:03.388 [main] LogThis - Account 39 has been created.
+[INFO ] 2020-11-17 22:09:03.682 [main] LogThis - Customer 0 updated their password.
+[INFO ] 2020-11-17 22:12:05.724 [main] LogThis - Account 40 has been created.
+[INFO ] 2020-11-17 22:12:06.068 [main] LogThis - Customer 0 updated their password.
+[INFO ] 2020-11-17 22:17:07.577 [main] LogThis - Account 41 has been created.
+[INFO ] 2020-11-17 22:17:08.189 [main] LogThis - Customer 41 updated their password.
+[INFO ] 2020-11-17 22:23:38.614 [main] LogThis - Account 42 has been created.
+[INFO ] 2020-11-17 22:29:51.180 [main] LogThis - Account 43 has been created.
+[INFO ] 2020-11-17 22:29:51.767 [main] LogThis - Customer 43 updated their address.
+[INFO ] 2020-11-17 22:42:21.154 [main] LogThis - Account 44 has been created.
+[INFO ] 2020-11-17 22:42:21.772 [main] LogThis - Customer 44 has a new account approved.
+[INFO ] 2020-11-17 22:45:17.324 [main] LogThis - Account 45 has been created.
+[INFO ] 2020-11-17 22:45:17.914 [main] LogThis - Customer 45's account has been deleted.
+[INFO ] 2020-11-17 22:54:00.362 [main] LogThis - Account 46 has been created.
+[INFO ] 2020-11-17 22:54:01.039 [main] LogThis - Account 47 has been created.
+[INFO ] 2020-11-17 22:54:01.655 [main] LogThis - Customer 47 has a new account approved.
+[INFO ] 2020-11-17 22:54:01.986 [main] LogThis - Account 48 has been created.
+[INFO ] 2020-11-17 22:54:02.587 [main] LogThis - Account 49 has been created.
+[INFO ] 2020-11-17 22:54:03.177 [main] LogThis - Account 50 has been created.
+[INFO ] 2020-11-17 22:54:03.505 [main] LogThis - Account 51 has been created.
+[INFO ] 2020-11-17 22:54:04.065 [main] LogThis - Customer 51 updated their address.
+[INFO ] 2020-11-17 22:54:04.405 [main] LogThis - Account 52 has been created.
+[INFO ] 2020-11-17 22:54:05.012 [main] LogThis - Customer 52's account has been deleted.
+[INFO ] 2020-11-17 22:54:05.603 [main] LogThis - Account 53 has been created.
+[INFO ] 2020-11-17 22:54:06.168 [main] LogThis - Customer 53 updated their password.
+[INFO ] 2020-11-17 22:55:08.185 [main] LogThis - Account 54 has been created.
+[INFO ] 2020-11-17 22:55:08.896 [main] LogThis - Account 55 has been created.
+[INFO ] 2020-11-17 22:55:09.552 [main] LogThis - Customer 55 has a new account approved.
+[INFO ] 2020-11-17 22:55:09.910 [main] LogThis - Account 56 has been created.
+[INFO ] 2020-11-17 22:55:10.505 [main] LogThis - Account 57 has been created.
+[INFO ] 2020-11-17 22:55:11.145 [main] LogThis - Account 58 has been created.
+[INFO ] 2020-11-17 22:55:11.570 [main] LogThis - Account 59 has been created.
+[INFO ] 2020-11-17 22:55:12.140 [main] LogThis - Customer 59 updated their address.
+[INFO ] 2020-11-17 22:55:12.481 [main] LogThis - Account 60 has been created.
+[INFO ] 2020-11-17 22:55:13.083 [main] LogThis - Customer 60's account has been deleted.
+[INFO ] 2020-11-17 22:55:13.695 [main] LogThis - Account 61 has been created.
+[INFO ] 2020-11-17 22:55:14.281 [main] LogThis - Customer 61 updated their password.
+[INFO ] 2020-11-17 22:56:37.622 [main] LogThis - Account 62 has been created.
+[INFO ] 2020-11-17 22:56:38.240 [main] LogThis - Account 63 has been created.
+[INFO ] 2020-11-17 22:56:38.842 [main] LogThis - Customer 63 has a new account approved.
+[INFO ] 2020-11-17 22:56:39.176 [main] LogThis - Account 64 has been created.
+[INFO ] 2020-11-17 22:56:39.775 [main] LogThis - Account 65 has been created.
+[INFO ] 2020-11-17 22:56:40.363 [main] LogThis - Account 66 has been created.
+[INFO ] 2020-11-17 22:56:40.693 [main] LogThis - Account 67 has been created.
+[INFO ] 2020-11-17 22:56:41.366 [main] LogThis - Customer 67 updated their address.
+[INFO ] 2020-11-17 22:56:41.695 [main] LogThis - Account 68 has been created.
+[INFO ] 2020-11-17 22:56:42.293 [main] LogThis - Customer 68's account has been deleted.
+[INFO ] 2020-11-17 22:56:42.882 [main] LogThis - Account 69 has been created.
+[INFO ] 2020-11-17 22:56:43.433 [main] LogThis - Customer 69 updated their password.
+[INFO ] 2020-11-17 22:57:49.164 [main] LogThis - Account 70 has been created.
+[INFO ] 2020-11-17 22:57:49.781 [main] LogThis - Account 71 has been created.
+[INFO ] 2020-11-17 22:57:50.394 [main] LogThis - Customer 71 has a new account approved.
+[INFO ] 2020-11-17 22:57:50.736 [main] LogThis - Account 72 has been created.
+[INFO ] 2020-11-17 22:57:51.340 [main] LogThis - Account 73 has been created.
+[INFO ] 2020-11-17 22:57:51.941 [main] LogThis - Account 74 has been created.
+[INFO ] 2020-11-17 22:57:52.349 [main] LogThis - Account 75 has been created.
+[INFO ] 2020-11-17 22:57:52.923 [main] LogThis - Customer 75 updated their address.
+[INFO ] 2020-11-17 22:57:53.259 [main] LogThis - Account 76 has been created.
+[INFO ] 2020-11-17 22:57:53.869 [main] LogThis - Customer 76's account has been deleted.
+[INFO ] 2020-11-17 22:57:54.503 [main] LogThis - Account 77 has been created.
+[INFO ] 2020-11-17 22:57:55.108 [main] LogThis - Customer 77 updated their password.
+[INFO ] 2020-11-17 22:58:11.515 [main] LogThis - Account 78 has been created.
+[INFO ] 2020-11-17 22:58:12.156 [main] LogThis - Account 79 has been created.
+[INFO ] 2020-11-17 22:58:12.780 [main] LogThis - Customer 79 has a new account approved.
+[INFO ] 2020-11-17 22:58:13.120 [main] LogThis - Account 80 has been created.
+[INFO ] 2020-11-17 22:58:13.731 [main] LogThis - Account 81 has been created.
+[INFO ] 2020-11-17 22:58:14.342 [main] LogThis - Account 82 has been created.
+[INFO ] 2020-11-17 22:58:14.694 [main] LogThis - Account 83 has been created.
+[INFO ] 2020-11-17 22:58:15.277 [main] LogThis - Customer 83 updated their address.
+[INFO ] 2020-11-17 22:58:15.620 [main] LogThis - Account 84 has been created.
+[INFO ] 2020-11-17 22:58:16.290 [main] LogThis - Customer 84's account has been deleted.
+[INFO ] 2020-11-17 22:58:16.885 [main] LogThis - Account 85 has been created.
+[INFO ] 2020-11-17 22:58:17.487 [main] LogThis - Customer 85 updated their password.
+[INFO ] 2020-11-17 23:15:25.099 [main] LogThis - Account 14 was applied for.
+[INFO ] 2020-11-17 23:23:41.280 [main] LogThis - Account 15 was applied for.
+[INFO ] 2020-11-17 23:28:59.200 [main] LogThis - Account 16 was applied for.
+[INFO ] 2020-11-17 23:28:59.848 [main] LogThis - Account 17 was applied for.
+[INFO ] 2020-11-17 23:29:00.153 [main] LogThis - Account 17 has been approved.
+[INFO ] 2020-11-17 23:30:46.127 [main] LogThis - Account 18 was applied for.
+[INFO ] 2020-11-17 23:31:23.468 [main] LogThis - Account 19 was applied for.
+[INFO ] 2020-11-17 23:38:32.058 [main] LogThis - Account 20 was applied for.
+[INFO ] 2020-11-17 23:38:32.654 [main] LogThis - 20 had a deposit of $50.75 for a new balance of $150.75
+[INFO ] 2020-11-17 23:39:01.232 [main] LogThis - Account 21 was applied for.
+[INFO ] 2020-11-17 23:39:01.852 [main] LogThis - 21 had a deposit of $50.75 for a new balance of $150.75
+[INFO ] 2020-11-17 23:39:46.270 [main] LogThis - Account 22 was applied for.
+[INFO ] 2020-11-17 23:39:46.879 [main] LogThis - 22 had a withdraw of $50.75 for a new balance of $49.25
+[INFO ] 2020-11-17 23:43:45.530 [main] LogThis - Account 23 was applied for.
+[INFO ] 2020-11-17 23:43:45.874 [main] LogThis - Account 24 was applied for.
+[INFO ] 2020-11-17 23:43:46.785 [main] LogThis - 23 transferred $25.62 to 
+---------------------------------------------------------------------------------------------------
+Account ID: 24, Account Type = SAVINGS, Account Active? = false, Balance=525.62
+--------------------------------------------------------------------------------------------------
+[INFO ] 2020-11-17 23:45:50.309 [main] LogThis - Account 25 was applied for.
+[INFO ] 2020-11-17 23:45:50.647 [main] LogThis - Account 25 has been deleted.
+[INFO ] 2020-11-17 23:46:24.250 [main] LogThis - Account 26 was applied for.
+[INFO ] 2020-11-17 23:46:24.896 [main] LogThis - Account 26 has been deleted.
+[INFO ] 2020-11-17 23:48:41.247 [main] LogThis - Account 27 was applied for.
+[INFO ] 2020-11-17 23:48:41.620 [main] LogThis - Account 27 has been deleted.
+[INFO ] 2020-11-17 23:49:05.903 [main] LogThis - Account 28 was applied for.
+[INFO ] 2020-11-17 23:49:06.551 [main] LogThis - Account 29 was applied for.
+[INFO ] 2020-11-17 23:49:07.109 [main] LogThis - 29 had a withdraw of $50.75 for a new balance of $49.25
+[INFO ] 2020-11-17 23:49:07.749 [main] LogThis - Account 30 was applied for.
+[INFO ] 2020-11-17 23:49:08.106 [main] LogThis - Account 30 has been deleted.
+[INFO ] 2020-11-17 23:49:08.454 [main] LogThis - Account 31 was applied for.
+[INFO ] 2020-11-17 23:49:09.065 [main] LogThis - 31 had a deposit of $50.75 for a new balance of $150.75
+[INFO ] 2020-11-17 23:49:09.674 [main] LogThis - Account 32 was applied for.
+[INFO ] 2020-11-17 23:49:10.289 [main] LogThis - Account 33 was applied for.
+[INFO ] 2020-11-17 23:49:10.569 [main] LogThis - Account 33 has been approved.
+[INFO ] 2020-11-17 23:49:11.173 [main] LogThis - Account 34 was applied for.
+[INFO ] 2020-11-17 23:49:11.473 [main] LogThis - Account 35 was applied for.
+[INFO ] 2020-11-17 23:49:12.568 [main] LogThis - 34 transferred $25.62 to 
+---------------------------------------------------------------------------------------------------
+Account ID: 35, Account Type = SAVINGS, Account Active? = false, Balance=525.62
+--------------------------------------------------------------------------------------------------
+[INFO ] 2020-11-17 23:49:29.209 [main] LogThis - Account 36 was applied for.
+[INFO ] 2020-11-17 23:49:29.595 [main] LogThis - Account 37 was applied for.
+[INFO ] 2020-11-17 23:49:30.216 [main] LogThis - Account 38 was applied for.
+[INFO ] 2020-11-17 23:49:30.838 [main] LogThis - 38 had a withdraw of $50.75 for a new balance of $49.25
+[INFO ] 2020-11-17 23:49:31.463 [main] LogThis - Account 39 was applied for.
+[INFO ] 2020-11-17 23:49:31.777 [main] LogThis - Account 39 has been deleted.
+[INFO ] 2020-11-17 23:49:32.136 [main] LogThis - Account 40 was applied for.
+[INFO ] 2020-11-17 23:49:32.723 [main] LogThis - 40 had a deposit of $50.75 for a new balance of $150.75
+[INFO ] 2020-11-17 23:49:33.338 [main] LogThis - Account 41 was applied for.
+[INFO ] 2020-11-17 23:49:33.933 [main] LogThis - Account 42 was applied for.
+[INFO ] 2020-11-17 23:49:34.207 [main] LogThis - Account 42 has been approved.
+[INFO ] 2020-11-17 23:49:34.814 [main] LogThis - Account 43 was applied for.
+[INFO ] 2020-11-17 23:49:35.086 [main] LogThis - Account 44 was applied for.
+[INFO ] 2020-11-17 23:49:36.021 [main] LogThis - 43 transferred $25.62 to 
+---------------------------------------------------------------------------------------------------
+Account ID: 44, Account Type = SAVINGS, Account Active? = false, Balance=525.62
+--------------------------------------------------------------------------------------------------
+[INFO ] 2020-11-18 00:07:56.155 [main] LogThis - Account 86 has been created.
+[INFO ] 2020-11-18 00:07:56.451 [main] LogThis - Account 45 was applied for.
